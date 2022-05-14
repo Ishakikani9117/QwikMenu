@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<div style="background-color: #b499b9;"class=" p-5   text-dark">
+
+
+        <br><br>
+            <div class="shadow-lg p-5 mb-5 mt-5 ms-5 me-5 bg-body rounded" class="container px-4">
+            <form action="createacc.html" method="post" class="row g-3" >
+                {% csrf_token %}
+                
+                <figure class="text-center">
+                    <h1 class="display-2 p-5 mb-0 mt-2 ms-5 me-5  bg-white text-dark">Create an Account</h1>
+            
+                </figure>
+
+                <div class="col-md-6" ">
+                    <label for="fname" class="form-label">First Name</label>
+                    <input type="text" class="form-control" id="fname" name="fname" required>
+                </div>
+
+                <div class="col-md-6" ">
+                    <label for="lname" class="form-label">Last Name</label>
+                    <input type="text" class="form-control" id="lname" name="lname" required>
+                </div>
+
+                <div class="col-md-6">
+                <label for="hemail" class="form-label">Email</label>
+                <input type="email" class="form-control" id="hemail" name="hemail" required>
+                </div>
+
+                <div class="col-md-6">
+                    <label for="uname" class="form-label">Username</label>
+                    <input type="text" class="form-control" id="uname" name="uname" required>
+                </div>
+                
+                <div class="mb-4">
+                    <label for="pswd" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="pswd" name="pswd" rows="3" required></input>
+                </div>
+                
+                <div class="mb-4">
+                    <label for="mobno" class="form-label">Contact No.</label>
+                    <input type="text" class="form-control" id="mobno" name="mobno" rows="3"></input>
+                </div>
+                
+
+                <div  class="text-center" >
+                <button type="submit" value="submit" class="btn btn-primary">Create</button>
+                </div>   
+            </form>
+        </div>    
+
+    </div>
+
+
+
+
+{% endblock %}

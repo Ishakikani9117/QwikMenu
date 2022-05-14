@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+        <div style="background-color: #9fb16a;" class=" p-5  text-dark">
+
+            <div class="shadow-lg p-5 mb-5 mt-5 ms-5 me-5 bg-body rounded" class="container px-4">        
+                <form action="login_page.html" method="post"  class="row g-3" >
+                    {% csrf_token %}
+
+                    <figure class="text-center">
+                        <h1 class="display-2 p-4 mb-0 mt-2 ms-5 me-5  bg-white text-dark">LOGIN</h1>
+                
+                    </figure>
+                    <br><br>
+
+                    <div class="col-md-6" ">
+                        <label for="uname" class="form-label">Username</label>
+                        <input type="text" class="form-control" id="uname" name="uname" required>
+                    </div>
+
+                    <div class="col-md-6" ">
+                        <label for="upass" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="upass" name="upass" required>
+                    </div>
+
+                    <div  class="text-center" >
+                        <button type="submit" class="btn btn-primary">Log In</button>
+                    </div>
+
+                    <a href="createacc.html"> New? Create an Accout! </a>
+
+                </form>
+            </div>
+        </div>
+      
+
+{% endblock %}

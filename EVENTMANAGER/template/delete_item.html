@@ -1,0 +1,32 @@
+<!-- btn btn-secondary -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div style="background-color: #98c6d3e0;"  class="  text-dark">
+
+    <figure class="text-center">
+        <br><br><br><br><br>    
+        <h3 class="display-3 w-100 p-5  bg-white text-dark">Delete items.</h3>
+    </figure>
+
+            <br><br>
+                <div class="shadow-lg p-5 mb-5 mt-5 ms-5 me-5 bg-body rounded" class="container px-4">
+                <form action="delete_item.html" method="post" enctype='multipart/form-data' class="row g-3" >
+                    {% csrf_token %}
+
+                    <div class="col-md-6" ">
+                        <label for="dname" class="form-label">Item Name</label>
+                        <input type="text" class="form-control" id="dname" name="dname" required>
+                    </div>
+
+                    <div  class="text-center" >
+                        <button type="submit" class="btn btn-primary">Delete</button>
+                    </div>
+
+                </form>
+            </div>    
+
+</div>
+{% endblock %}

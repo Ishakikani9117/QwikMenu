@@ -1,0 +1,401 @@
+<!-- btn btn-secondary -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div style="background-color: #98c6d3e0;"  class="  text-dark">
+
+    <figure class="text-center">
+        <br><br><br><br><br>    
+        <h3 class="display-3 w-100 p-5  bg-white text-dark">Hotel Hilton</h3>
+    </figure>
+
+    <br><br>
+    <form action="order.html" method="post" >
+        {% csrf_token %}
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="card" style="width: 20rem;">
+                        <img src="https://www.culturalindia.net/iliimages/Gujarati-Food-1.jpg" class="card-img-top" alt="Image not available">
+                        <div class="card-body">
+                        <h4 class="card-title" align="center">Gujarati</h4>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            
+                            {% for product in gujarati%}
+                                
+                                <div class="form-check" align = "center">
+                                    
+                                    {{product.item}}
+                                    &nbsp;&nbsp;
+                                    {{ product.price }} /-
+                                
+                            
+                                
+                                <input type="number" id="{{product.id}}" class="{{product.id}}" min="0" max="100" step="1" value="0" >
+                                
+                                        <script>
+                                            var r = document.getElementById('r'),
+                                            n = document.getElementById('n'),
+                                            inc = document.getElementById('increment'),
+                                            dec = document.getElementById('decrement');           
+
+
+                                            inc.addEventListener('click', function() {
+                                                r.stepUp(1);      
+                                                n.stepUp(1);
+                                            }, false);
+
+                                            dec.addEventListener('click', function() {
+                                                r.stepDown(1); 
+                                                n.stepDown(1);            
+                                            }, false);
+
+                                            if(inc!=0) {
+
+                                            }
+                                        </script>
+                                        <br>
+                                </div>
+                                    
+
+                            {% endfor %}     
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 mb-4">
+                        <div class="card" style="width: 20rem;">
+                        <img src="https://media.istockphoto.com/photos/asian-oranage-chicken-with-green-onions-picture-id483120255?k=20&m=483120255&s=612x612&w=0&h=UX3BT-1WCvwAdsSiuuKTeFjklOdPXndZFwFQ0AeJyGE=" class="card-img-top" alt="Image not available ">
+                        <div class="card-body">
+                        <h4 class="card-title" align="center" >Chinese</h4>
+                        </div>
+                        <ul class="list-group list-group-flush">
+
+                            {% for product in chinese %}
+
+                                <div class="form-check" align = "center">
+                                    {{product.item}}
+                                    &nbsp;&nbsp;
+                                    {{ product.price }} /-
+                                    
+                                    <input type="number" id="{{product.id}}" class="{{product.id}}" required min="0" max="100" step="1" value="0">
+                                    
+                                    <script>
+                                        var r = document.getElementById('r'),
+                                        n = document.getElementById('n'),
+                                        inc = document.getElementById('increment'),
+                                        dec = document.getElementById('decrement');           
+
+
+                                        inc.addEventListener('click', function() {
+                                            r.stepUp(1);      
+                                            n.stepUp(1);
+                                        }, false);
+
+                                        dec.addEventListener('click', function() {
+                                            r.stepDown(1); 
+                                            n.stepDown(1);            
+                                        }, false);
+                                    </script>
+<br>
+                                </div>
+
+                            {% endfor %}     
+                        </ul>
+                    
+                    </div>
+                </div>
+
+                <div class="col-lg-4 mb-4">
+                    <div class="card" style="width: 20rem;">
+                        <img src="https://insanelygoodrecipes.com/wp-content/uploads/2020/03/Lasagna-1024x536.png" class="card-img-top" alt="Image not available">
+                        <div class="card-body">
+                        <h4 class="card-title" align="center">Italian</h4>
+                        </div>
+                        <ul class="list-group list-group-flush">
+
+                            {% for product in italian %}
+
+                                <div class="form-check" align = "center">
+                                    {{product.item}}
+                                    &nbsp;&nbsp;
+                                    {{ product.price }} /-
+                                
+                                <input type="number" id="{{product.id}}" class="{{product.id}}" required min="0" max="100" step="1" value="0">
+                                
+                                <script>
+                                    var r = document.getElementById('r'),
+                                    n = document.getElementById('n'),
+                                    inc = document.getElementById('increment'),
+                                    dec = document.getElementById('decrement');           
+
+
+                                    inc.addEventListener('click', function() {
+                                        r.stepUp(1);      
+                                        n.stepUp(1);
+                                    }, false);
+
+                                    dec.addEventListener('click', function() {
+                                        r.stepDown(1); 
+                                        n.stepDown(1);            
+                                    }, false);
+                                </script>
+                                <br>
+                            </div>
+                            {% endfor %}     
+                        </ul>
+                    
+                    </div>
+                </div>  
+            </div>
+
+            <div class="row">
+
+                <div class="col-lg-4 mb-4">
+                    <div class="card" style="width: 20rem;">
+                        <img src="https://media-cdn.tripadvisor.com/media/photo-s/1a/48/a0/85/variety-of-dishes-shown.jpg" class="card-img-top" alt="Image not available">
+                        <div class="card-body">
+                        <h4 class="card-title" align="center">Punjabi</h4>
+                        </div>
+                        <ul class="list-group list-group-flush">
+
+                            {% for product in punjabi %}
+
+                                <div class="form-check " align = "center">
+                                    {{product.item}}
+                                    &nbsp;&nbsp;
+                                    {{ product.price }} /-
+                                
+                                <input type="number" id="{{product.id}}" class="{{product.id}}" required min="0" max="100" step="1" value="0">
+                                
+                                <script>
+                                    var r = document.getElementById('r'),
+                                    n = document.getElementById('n'),
+                                    inc = document.getElementById('increment'),
+                                    dec = document.getElementById('decrement');           
+
+
+                                    inc.addEventListener('click', function() {
+                                        r.stepUp(1);      
+                                        n.stepUp(1);
+                                    }, false);
+
+                                    dec.addEventListener('click', function() {
+                                        r.stepDown(1); 
+                                        n.stepDown(1);            
+                                    }, false);
+                                </script>
+                                <br>
+                            </div>
+                            {% endfor %}     
+                        </ul>
+                    
+                    </div>
+                </div>
+
+                <div class="col-lg-4 mb-4">
+                    <div class="card" style="width: 20rem;" >
+                        <img src="https://www.culturalindia.net/iliimages/South%20Indian%20Food_1.jpg" class="card-img-top" alt="Image not available">
+                        <div class="card-body">
+                        <h4 class="card-title" align="center">South Indian</h4>
+                        </div>
+                        <ul class="list-group list-group-flush">
+
+                            {% for product in south %}
+
+                                <div class="form-check" align = "center">
+                                    {{product.item}}
+                                    &nbsp;&nbsp;
+                                    {{ product.price }} /-
+                               
+                                <input type="number" id="{{product.id}}" class="{{product.id}}" required min="0" max="100" step="1" value="0">
+                                
+                                <script>
+                                    var r = document.getElementById('r'),
+                                    n = document.getElementById('n'),
+                                    inc = document.getElementById('increment'),
+                                    dec = document.getElementById('decrement');           
+
+
+                                    inc.addEventListener('click', function() {
+                                        r.stepUp(1);      
+                                        n.stepUp(1);
+                                    }, false);
+
+                                    dec.addEventListener('click', function() {
+                                        r.stepDown(1); 
+                                        n.stepDown(1);            
+                                    }, false);
+                                </script>
+                                <br>
+                            </div>
+                            {% endfor %}     
+                        </ul>
+                    
+                    </div>
+                </div>
+
+                <div class="col-lg-4 mb-4">
+                    <div class="card" style="width: 20rem;">
+                        <img src="https://www.bethlehem.edu/wp-content/uploads/2021/01/873._Types_of_Decorations_and_Accompaniments_for_Non-Alcoholic_Beverages-AJAR.id-01.jpg" class="card-img-top" alt="Image not available">
+                        <div class="card-body">
+                        <h4 class="card-title" align="center">Beverages</h4>
+                        </div>
+                        <ul class="list-group list-group-flush">
+
+                            {% for product in beverages %}
+
+                                <div class="form-check" align = "center">
+                                    {{product.item}}
+                                    &nbsp;&nbsp;
+                                    {{ product.price }} /-
+                                
+                                <input type="number" id="{{product.id}}" class="{{product.id}}" required min="0" max="100" step="1" value="0">
+                                
+                                <script>
+                                   
+                                    
+                                    var r = document.getElementById('r'),
+                                    n = document.getElementById('n'),
+                                    inc = document.getElementById('increment'),
+                                    dec = document.getElementById('decrement');           
+
+
+                                    inc.addEventListener('click', function() {
+                                        r.stepUp(1);      
+                                        n.stepUp(1);
+                                    }, false);
+
+                                    dec.addEventListener('click', function() {
+                                        r.stepDown(1); 
+                                        n.stepDown(1);            
+                                    }, false);
+                                </script>
+                                <br>
+                            </div>
+                            {% endfor %}     
+                        </ul>
+                    
+                    </div>
+                </div>
+            </div>
+            
+
+            <script>
+                function log_console() {
+                    console.log
+                        ("GeeksforGeeks is a portal for geeks.");
+                }
+            </script>
+
+
+            <div  class="text-center" >
+                <button type="submit" id="select" class="btn btn-dark">Order</button>
+            </div>
+
+            {% for product in gujarati %}
+                <script>
+                    
+                    document.querySelector("#select").addEventListener("click", function(){
+                    var quantity = document.getElementById('{{product.id}}').value();
+                    
+                    console.log(quantity);
+
+                    if(quantity > 0)
+                    {
+                        var temp = [{{product.item}}, {{product.price}}, quantity];
+
+                        selected.append(temp);
+                    }
+                    })
+                </script>
+            {% endfor %}
+            
+            {% for product in chinese %}
+                <script>
+                    document.querySelector("#select").addEventListener("click", function(){
+                    var quantity = document.getElementById('{{product.id}}').value();
+
+                    if(quantity > 0)
+                    {
+                        var temp = ["{{product.item}}", "{{product.price}}", quantity];
+
+                        selected.append(temp);
+                    }
+                    })
+                </script>
+            {% endfor %}
+
+            {% for product in italian %}
+                <script>
+                    document.querySelector("#select").addEventListener("click", function(){
+                    var quantity = document.getElementById('{{product.id}}').value();
+
+                    if(quantity > 0)
+                    {
+                        var temp = ["{{product.item}}", "{{product.price}}", quantity];
+
+                        selected.append(temp);
+                    }
+                    })
+                </script>
+            {% endfor %}
+
+            {% for product in punjabi %}
+                <script>
+                    document.querySelector("#select").addEventListener("click", function(){
+                    var quantity = document.getElementById('{{product.id}}').value();
+
+                    if(quantity > 0)
+                    {
+                        var temp = ["{{product.item}}", "{{product.price}}", quantity];
+
+                        selected.append(temp);
+                    }
+                    })
+                </script>
+            {% endfor %}
+
+            {% for product in south %}
+                <script>
+                    document.querySelector("#select").addEventListener("click", function(){
+                    var quantity = document.getElementById('{{product.id}}').value();
+                    console.log("🚀 ~ file: order.html ~ line 367 ~ document.querySelector ~ quantity", quantity)
+
+                    if(quantity > 0)
+                    {
+                        var temp = ["{{product.item}}", "{{product.price}}", quantity];
+                        console.log("🚀 ~ file: order.html ~ line 371 ~ document.querySelector ~ temp", temp)
+
+                        selected.append(temp);
+                    }
+                    })
+                </script>
+            {% endfor %}
+
+            {% for product in beverages %}
+                <script>
+                    document.querySelector("#select").addEventListener("click", function(){
+                    var quantity = document.getElementById('{{product.id}}').value();
+
+                    if(quantity > 0)
+                    {
+                        var temp = [{{product.item}} , {{product.price}}, quantity];
+
+                        selected.append(temp);
+                    }
+                    })
+                </script>
+            {% endfor %}
+
+        </div>
+    </form>
+    <script src="script.js"></script>
+        
+</div>
+
+{% endblock %}
